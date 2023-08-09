@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+import py_compile
+import os
+
+def compile_python_script(script_path):
+    try:
+        output_filename = os.path.splitext(script_path)[0] + ".pyc"
+        py_compile.compile(script_path, cfile=output_filename, doraise=True)
+        print(f"Compilation of '{script_path}' successful. Output saved as '{output_filename}'.")
+    except py_compile.PyCompileError as e:
+        print(f"Compilation error: {e}")
+
+if __name__ == "__main__":
+    script_file = os.environ.get("PYFILE")
+    if script_file:
+        compile_python_script(script_file)
+    else:
+        print("Please set the 'PYFILE' environment variable to the path of the Python script to compile.")
+	

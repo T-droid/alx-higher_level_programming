@@ -22,6 +22,7 @@ size_t print_listint(const listint_t *h)
 	}
 	return (n);
 }
+
 /**
  * add_nodeint - adds a new node at the beginning of a listint_t list
  * @head: pointer to a pointer of the start of the list
@@ -38,15 +39,17 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	new->n = n;
 	new->next = *head;
 	*head = new;
+
 	return (new);
 }
+
 /**
  * free_listint - frees a listint_t list
  * @head: pointer to list to be freed
  * Return: void
  */
 void free_listint(listint_t *head)
-
+{
 	listint_t *current;
 
 	while (head != NULL)
