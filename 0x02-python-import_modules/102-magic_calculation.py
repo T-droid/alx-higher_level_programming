@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 from magic_calculations_102 import add, sub
 
 
