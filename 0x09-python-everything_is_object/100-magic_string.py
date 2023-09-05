@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-count = 0
 def magic_string():
-    global count; count += 1; return "BestSchool" + (", " + "BestSchool") * count
+    magic_string.count = getattr(magic_string, 'count', 0) + 1
+    return ("BestSchool, " * (magic_string.count - 1) + "BestSchool")
