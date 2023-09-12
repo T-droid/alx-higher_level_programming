@@ -2,7 +2,9 @@
 
 """module to define matrix multiplier"""
 
-def matrix_mul(m_a, m_b):
+import numpy as np
+
+def lazy_matrix_mul(m_a, m_b):
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
 
@@ -40,11 +42,4 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    result = [[0 for _ in range(len(m_b[0]))] for _ in range(len(m_a))]
-
-    for i in range(len(m_a)):
-        for j in range(len(m_b[0])):
-            for k in range(len(m_b)):
-                result[i][j] += m_a[i][k] * m_b[k][j]
-
-    return result
+    return np.dot(m_a, m_b)
