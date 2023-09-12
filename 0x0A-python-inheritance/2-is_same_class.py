@@ -7,8 +7,10 @@ def is_same_class(obj, a_class):
     """check if instance is for a specific class
     Args:
         obj(object): instance to be checked
-        a_class(class): class to compare 
-        """
+        a_class(class): class to compare
+    Return: True if obj is an instance of a_class
+    False otherwise
+    """
     if obj.__class__ is a_class:
         return True
     return False
